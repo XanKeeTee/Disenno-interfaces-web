@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Preguntas Teóricas</h2>
+    <dl>
+      <dt>
+        1. ¿Cuál es la diferencia principal entre los formatos de imagen
+        rasterizados y los vectoriales? (Ejemplo: JPEG y PNG vs. SVG)
+      </dt>
+      <dd>
+        La diferencia fundamental es cómo almacenan la información:
+        <ul>
+          <li>
+            <strong>Rasterizados (JPEG, PNG):</strong> Son mapas de bits. La
+            imagen se compone de una cuadrícula de píxeles. Tienen una
+            resolución fija, por lo que al escalarlos (agrandarlos) pierden
+            calidad y se ven "pixelados".
+          </li>
+          <li>
+            <strong>Vectoriales (SVG):</strong> Se basan en fórmulas matemáticas
+            (vectores) que definen líneas, curvas, formas y colores. Son
+            independientes de la resolución, lo que significa que pueden
+            escalarse infinitamente (agrandarse o reducirse) sin perder
+            absolutamente nada de calidad.
+          </li>
+        </ul>
+      </dd>
+
+      <dt>
+        2. ¿Por qué el formato JPEG es el más utilizado para fotografías
+        digitales, y cuáles son las consecuencias de su compresión con pérdida?
+      </dt>
+      <dd>
+        Es el más usado para fotos porque soporta millones de colores (ideal
+        para degradados y tonos de piel) y ofrece un ratio de compresión muy
+        alto. La consecuencia de su compresión
+        <strong>con pérdida (lossy)</strong> es que, para reducir el tamaño del
+        archivo, descarta permanentemente información (datos) de la imagen. Si
+        la compresión es alta, esto provoca "artefactos" visibles (bloques,
+        ruido, bordes borrosos).
+      </dd>
+
+      <dt>
+        3. Explica en qué situaciones sería más conveniente usar una imagen PNG
+        en lugar de una JPEG.
+      </dt>
+      <dd>
+        Es mejor usar PNG cuando se necesita:
+        <ul>
+          <li>
+            <strong>Transparencia:</strong> PNG soporta un canal alfa completo,
+            permitiendo transparencias suaves (ideal para logos o imágenes que
+            se superponen a otros fondos).
+          </li>
+          <li>
+            <strong>Gráficos con bordes nítidos:</strong> Para logotipos, iconos
+            o texto dentro de una imagen. Su compresión sigue siendo sin
+            pérdida, por lo que no crea los artefactos borrosos de JPEG
+            alrededor de las líneas nítidas.
+          </li>
+        </ul>
+      </dd>
+
+      <dt>
+        4. El formato GIF tiene limitaciones en su paleta de colores. ¿Cómo
+        afecta esto a la calidad visual y qué ventajas mantiene?
+      </dt>
+      <dd>
+        <strong>Afecta a la calidad</strong> porque GIF solo soporta un máximo
+        de 256 colores. En fotografías o imágenes con degradados complejos, esto
+        causa "banding" (franjas de color) o "dithering" (un punteado para
+        simular más colores). Su <strong>principal ventaja</strong>, y la razón
+        por la que sigue siendo popular, es su capacidad para crear
+        <strong>animaciones simples</strong> en un solo archivo de poco peso.
+      </dd>
+
+      <dt>
+        5. ¿Qué características hacen del formato SVG una buena opción para
+        logotipos y gráficos escalables en la web?
+      </dt>
+      <dd>
+        <ul>
+          <li>
+            <strong>Escalabilidad:</strong> Al ser vectorial, se escala
+            perfectamente a cualquier tamaño (móvil, tablet, escritorio, retina)
+            sin perder calidad.
+          </li>
+          <li>
+            <strong>Tamaño de archivo:</strong> Suelen ser muy ligeros (ya que
+            es código XML).
+          </li>
+          <li>
+            <strong>Interactividad:</strong> Se pueden manipular con CSS
+            (cambiar colores, animar) y JavaScript.
+          </li>
+          <li>
+            <strong>Accesibilidad:</strong> El texto dentro de un SVG es texto
+            real, seleccionable y legible por motores de búsqueda.
+          </li>
+        </ul>
+      </dd>
+
+      <dt>6. Compara el formato WEBP con PNG y JPEG. ¿Qué ventajas ofrece?</dt>
+      <dd>
+        WEBP (desarrollado por Google) es un formato moderno que intenta ser un
+        "todo en uno".
+        <ul>
+          <li>
+            <strong>Ventajas sobre JPEG:</strong> Ofrece compresión con pérdida
+            superior (archivos más pequeños con la misma calidad visual).
+          </li>
+          <li>
+            <strong>Ventajas sobre PNG:</strong> Ofrece compresión sin pérdida
+            (archivos más pequeños que PNG) y también soporta
+            <strong>transparencia con compresión con pérdida</strong> (algo que
+            PNG no hace), resultando en imágenes con fondo transparente mucho
+            más ligeras.
+          </li>
+          <li>
+            <strong>Animación:</strong> También soporta animación, como GIF,
+            pero con mejor calidad de color.
+          </li>
+        </ul>
+      </dd>
+
+      <dt>
+        7. ¿Por qué el formato BMP no se utiliza comúnmente en entornos web, y
+        en qué casos aún puede ser útil?
+      </dt>
+      <dd>
+        <strong>No se usa en web</strong> principalmente porque genera archivos
+        de tamaño <strong>extremadamente grande</strong>. Generalmente no tiene
+        compresión (o es muy ineficiente). Sigue siendo útil en algunos entornos
+        fuera de la web, como para almacenar datos de imagen "crudos" (sin
+        procesar) para edición o como un formato estándar en aplicaciones de
+        Windows.
+      </dd>
+
+      <dt>
+        8. Explica las ventajas del formato PSD en el proceso de edición de
+        imágenes profesionales. ¿Qué lo diferencia de los demás formatos?
+      </dt>
+      <dd>
+        PSD (Photoshop Document) no es un formato de imagen para web, sino un
+        <strong>archivo de proyecto</strong>. Su ventaja principal es que guarda
+        toda la información de edición de forma no destructiva:
+        <strong>capas</strong>, máscaras, textos editables, efectos, filtros
+        inteligentes, etc. Esto permite a un diseñador volver al archivo y
+        modificar cualquier parte del diseño sin tener que empezar de cero. Los
+        formatos como JPEG o PNG son "planos" (ya no tienen capas).
+      </dd>
+
+      <dt>
+        9. Si un diseñador necesita una imagen con transparencia, buena calidad
+        y tamaño de archivo razonable para una página web moderna, ¿qué formato
+        debería elegir y por qué?
+      </dt>
+      <dd>
+        Debería elegir **WEBP**. Ofrece una excelente calidad, soporta
+        transparencia de canal alfa (como PNG) y su compresión (tanto con
+        pérdida como sin pérdida) es mucho más eficiente que la de PNG,
+        resultando en archivos más pequeños que cargan más rápido. Si la
+        compatibilidad con navegadores muy antiguos fuera una prioridad
+        absoluta, la opción clásica sería **PNG**.
+      </dd>
+
+      <dt>
+        10. Describe las diferencias entre la compresión con pérdida y sin
+        pérdida, indicando qué formatos utilizan cada tipo y en qué casos es
+        preferible uno sobre el otro.
+      </dt>
+      <dd>
+        <ul>
+          <li>
+            <strong>Compresión Sin Pérdida (Lossless):</strong> Reduce el tamaño
+            del archivo sin descartar ningún dato. La imagen se puede
+            reconstruir al 100% idéntica a la original. Es preferible para
+            gráficos, logotipos, texto e iconos.
+            <ul>
+              <li>
+                Formatos: <strong>PNG, GIF, BMP</strong> (a veces),
+                <strong>WEBP (modo lossless)</strong>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Compresión Con Pérdida (Lossy):</strong> Reduce
+            significativamente el tamaño del archivo descartando permanentemente
+            datos que el algoritmo considera "menos importantes" para la
+            percepción humana. La calidad se degrada con cada guardado. Es
+            preferible para fotografías.
+            <ul>
+              <li>Formatos: <strong>JPEG, WEBP (modo lossy)</strong>.</li>
+            </ul>
+          </li>
+        </ul>
+      </dd>
+    </dl>
+
+    <h2><u>Ejercicios 1, 2 y 3</u></h2>
+
+    <figure>
+      <img
+        src="https://placehold.co/600x400/007bff/white?text=1.+Original"
+        width="600"
+        height="400"
+        alt="Imagen original placeholder de 600x400 píxeles."
+        title="Esta es la imagen original"
+        longdesc="#desc-img-1"
+      />
+      <figcaption>1. Imagen Original (600x400)</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="https://placehold.co/600x400/28a745/white?text=2.+Proporcional"
+        width="180"
+        alt="Imagen reducida proporcionalmente al 30% de su ancho original."
+        title="Imagen al 30% de ancho (180px)"
+        longdesc="#desc-img-2"
+      />
+      <figcaption>2. Reducción Proporcional (width="180")</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="https://placehold.co/600x400/dc3545/white?text=3.+Vertical"
+        height="200"
+        alt="Imagen reducida verticalmente al 50% de su alto original."
+        title="Imagen al 50% de alto (200px)"
+        longdesc="#desc-img-3"
+      />
+      <figcaption>3. Reducción Vertical (height="200")</figcaption>
+    </figure>
+    <div style="display: none" id="descripciones-largas">
+      <div id="desc-img-1">
+        <p>
+          Esta es una descripción larga para la imagen 1. Es una imagen
+          placeholder de 600x400 píxeles con fondo azul y texto blanco.
+        </p>
+      </div>
+      <div id="desc-img-2">
+        <p>
+          Esta es una descripción larga para la imagen 2. Es la misma imagen
+          pero forzada a un ancho de 180px (30% de 600px). El navegador calcula
+          la altura automáticamente.
+        </p>
+      </div>
+      <div id="desc-img-3">
+        <p>
+          Esta es una descripción larga para la imagen 3. Es la misma imagen
+          pero forzada a una altura de 200px (50% de 400px). El navegador
+          calcula el ancho automáticamente.
+        </p>
+      </div>
+    </div>
+
+    <h2><u>Ejercicio 4</u></h2>
+    <p>
+      La primera imagen (<code>loading="eager"</code>) carga inmediatamente. La
+      segunda (<code>loading="lazy"</code>) solo cargará cuando te desplaces
+      hacia abajo.
+    </p>
+
+    <img
+      src="https://placehold.co/400x200/ffc107/black?text=Eager+(Carga+Inmediata)"
+      alt="Imagen con carga eager"
+      loading="eager"
+    />
+
+    <div class="spacer">
+      <p>Haz scroll hacia abajo para ver la imagen "lazy"...<br />⬇</p>
+    </div>
+
+    <img
+      src="https://placehold.co/400x200/17a2b8/white?text=Lazy+(Carga+Perezosa)"
+      alt="Imagen con carga lazy"
+      loading="lazy"
+    />
+
+    <h2><u>Ejercicio 5</u></h2>
+    <p>
+      El atributo <code>ismap</code> convierte la imagen en un mapa de
+      coordenadas del lado del servidor. Cuando haces clic, el navegador añade
+      las coordenadas X e Y a la URL del enlace.
+    </p>
+    <p>
+      <strong>Instrucción:</strong> Haz clic en la imagen. Fíjate en la URL de
+      tu navegador (en la esquina inferior izquierda o en la barra de
+      direcciones si se procesa). Verás que añade <code>?x,y</code> al final del
+      <code>#</code>.
+    </p>
+
+    <a href="#" id="ismap-link">
+      <img
+        src="https://placehold.co/400x200/6f42c1/white?text=Haz+clic+en+mí+(ismap)"
+        alt="Imagen con atributo ismap"
+        ismap
+      />
+    </a>
+
+    <script>
+      document.getElementById("ismap-link").onclick = function (e) {
+
+        e.preventDefault();
+
+        alert(
+          "¡Clic detectado! El navegador intentaría navegar a una URL con las coordenadas. " +
+            "Mira la barra de direcciones después de cerrar este alert."
+        );
+
+        window.location.hash = "coords(simulado)";
+      };
+    </script>
+
+    <h2>Ejercicio 6</h2>
+            <p>La imagen de abajo utiliza <code>srcset</code> para definir 4 tamaños diferentes. El navegador elegirá la imagen más adecuada según el ancho de la pantalla y la densidad de píxeles.</p>
+            <p>Prueba a redimensionar la ventana de tu navegador y recargar la página para ver cómo carga una imagen diferente.</p>
+
+            <img 
+                src="https://placehold.co/300x200/fd7e14/white?text=300w+(default)"
+                alt="Imagen responsiva con srcset"
+                
+                srcset="https://placehold.co/300x200/fd7e14/white?text=300w 300w,
+                        https://placehold.co/600x400/fd7e14/white?text=600w 600w,
+                        https://placehold.co/900x600/fd7e14/white?text=900w 900w,
+                        https://placehold.co/1200x800/fd7e14/white?text=1200w 1200w"
+                
+                sizes="(max-width: 600px) 100vw, 
+                       (max-width: 900px) 50vw, 
+                       33vw">
+            
+            <p><code>sizes</code> le dice al navegador:</p>
+            <ul>
+                <li>Si la pantalla mide 600px o menos, la imagen ocupará el 100% del ancho (100vw).</li>
+                <li>Si la pantalla mide entre 601px y 900px, la imagen ocupará el 50% del ancho (50vw).</li>
+                <li>Para pantallas más anchas, ocupará el 33% del ancho (33vw).</li>
+            </ul>
+        </div>
+  </body>
+</html>
