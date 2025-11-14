@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controles de Formulario Avanzados</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 15px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        
+        /* Estilos base para formularios y agrupaciones */
+        form, fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 0 10px;
+            color: #0056b3;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="search"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+        
+        /* --- Ejercicio 1: Botón Moderno (Texto) --- */
+        .btn-modern {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-modern:hover {
+            background-color: #0056b3;
+        }
+        .btn-modern:active {
+            transform: scale(0.98);
+        }
+        #mensaje-boton {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* --- Ejercicio 2: Botón Moderno (Imagen) --- */
+        .btn-icon {
+            display: inline-flex; /* Permite alinear imagen y texto */
+            align-items: center;  /* Alineación vertical */
+            justify-content: center; /* Alineación horizontal */
+            gap: 8px; /* Espacio entre imagen y texto */
+            background-color: #28a745;
+        }
+        .btn-icon:hover {
+            background-color: #218838;
+        }
+        .btn-icon img {
+            width: 20px; /* Tamaño de la imagen */
+            height: 20px;
+        }
+        
+        /* --- Ejercicio 5: Textarea --- */
+        /* Los atributos se aplican directamente en el HTML */
+        
+        /* --- Ejercicio 6: Formulario Completo --- */
+        progress {
+            width: 95%;
+            height: 20px;
+        }
+        meter {
+            width: 95%;
+            height: 20px;
+        }
+        .button-group button,
+        .button-group input {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        fieldset:disabled {
+            background-color: #f9f9f9;
+            border-color: #eee;
+        }
+        fieldset:disabled legend {
+            color: #999;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Controles de Formulario Avanzados</h1>
+
+    <!-- ============================================= -->
+    <h2>Ejercicio 1: Botón Moderno con Texto</h2>
+    <!-- ============================================= -->
+    <button type="button" class="btn-modern" onclick="document.getElementById('mensaje-boton').value = '¡Gracias por pulsarme!';">
+        Púlsame
+    </button>
+    <output id="mensaje-boton" for=""></output>
+
+
+    <!-- ============================================= -->
+    <h2>Ejercicio 2: Botón Moderno con Imagen</h2>
+    <!-- ============================================= -->
+    <p>Botón con texto alineado junto a una imagen (placeholder).</p>
+    <button type="button" class="btn-modern btn-icon">
+        <!-- Usamos un placeholder simple. Reemplaza 'src' por tu .png -->
+        <img src="https://placehold.co/20x20/ffffff/ffffff?text=." alt="icono">
+        Ver detalles
+    </button>
+
+
+    <!-- ============================================= -->
+    <h2>Ejercicio 3 y 4: Cuadros Combinados</h2>
+    <!-- ============================================= -->
+    <fieldset>
+        <legend>Select y Datalist</legend>
+        
+        <!-- Cuadro combinado simple (Select) -->
+        <label for="transporte">Elige un transporte (Select):</label>
+        <select id="transporte" name="transporte">
+            <option value="">--Por favor, elige una opción--</option>
+            <option value="coche">Coche</option>
+            <option value="autobus">Autobús</option>
+            <option value="tren">Tren</option>
+        </select>
+
+        <!-- Cuadro combinado con sugerencias (Datalist) -->
+        <label for="navegador">Elige un navegador (Datalist):</label>
+        <input list="navegadores" id="navegador" name="navegador" type="text">
+        <datalist id="navegadores">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Safari"></option>
+            <option value="Edge"></option>
+            <option value="Brave"></option>
+        </datalist>
+    </fieldset>
+
+
+    <!-- ============================================= -->
+    <h2>Ejercicio 5: Cuadro de Texto Multilínea</h2>
+    <!-- ============================================= -->
+    <fieldset>
+        <legend>Textarea con Atributos</legend>
+        <label for="impresiones">Escribe tus impresiones:</label>
+        <textarea 
+            id="impresiones" 
+            name="impresiones" 
+            maxlength="50" 
+            cols="10" 
+            rows="5" 
+            placeholder="Escribe tus impresiones" 
+            required 
+            autofocus
+        ></textarea>
+        <p>Nota: <code>autofocus</code> solo funciona en un elemento por página. <code>cols="10"</code> hace el cuadro muy estrecho.</p>
+    </fieldset>
+    
+
+    <!-- ============================================= -->
+    <h2>Ejercicio 6: Formulario Completo (Todo Junto)</h2>
+    <!-- ============================================= -->
+    <form action="#" method="get">
+        
+        <!-- Fieldset + Legend + Datalist -->
+        <fieldset>
+            <legend>Información Básica</legend>
+            <label for="nombre-completo">Nombre:</label>
+            <input type="text" id="nombre-completo" name="nombre">
+            
+            <label for="navegador-form">Navegador (con Datalist):</label>
+            <input list="navegadores" id="navegador-form" name="navegador" type="text">
+            <!-- Datalist se puede reutilizar (definido en Ej. 3) -->
+        </fieldset>
+
+        <!-- Select + Option + Optgroup -->
+        <fieldset>
+            <legend>Selección (Simple y Múltiple)</legend>
+            
+            <label for="motor">Motorización (con optgroup):</label>
+            <select id="motor" name="motor">
+                <optgroup label="Combustión">
+                    <option value="gasolina">Gasolina</option>
+                    <option value="diesel">Diésel</option>
+                </optgroup>
+                <optgroup label="Eléctrico">
+                    <option value="electrico">100% Eléctrico</option>
+                    <option value="hibrido" selected>Híbrido (Valor por defecto)</option>
+                </optgroup>
+            </select>
+            
+            <label for="extras">Extras (selección múltiple - mantén Ctrl/Cmd):</label>
+            <select id="extras" name="extras" multiple size="4">
+                <option value="gps">Navegador GPS</option>
+                <option value="techo">Techo solar</option>
+                <option value="asientos">Asientos calefactables</option>
+                <option value="llantas">Llantas de aleación</option>
+            </select>
+        </fieldset>
+        
+        <!-- Textarea (reutilizado de Ej. 5) -->
+        <fieldset>
+            <legend>Comentarios (Textarea)</legend>
+            <label for="comentarios-form">Comentarios (max 50, 10 cols, 5 filas):</label>
+            <textarea 
+                id="comentarios-form" 
+                name="comentarios" 
+                maxlength="50" 
+                cols="10" 
+                rows="5" 
+                placeholder="Escribe aquí..." 
+                wrap="hard"
+            ></textarea>
+        </fieldset>
+        
+        <!-- Progress y Meter -->
+        <fieldset>
+            <legend>Medidores (Progress y Meter)</legend>
+            <label for="progreso">Progreso del perfil (70/100):</label>
+            <progress id="progreso" max="100" value="70"></progress>
+            
+            <label for="bateria">Nivel de batería (25%):</label>
+            <!-- Nivel de batería: min 0, max 100. Se considera "bajo" (low) por debajo de 30. -->
+            <meter id="bateria" min="0" max="100" low="30" high="80" optimum="100" value="25"></meter>
+        </fieldset>
+
+        <!-- Output -->
+        <fieldset>
+            <legend>Resultado (Output)</legend>
+            <p>Este valor se enviará con el formulario:</p>
+            <label for="resultado-fijo">ID de Sesión (predefinido):</label>
+            <!-- El 'name' está en el output, no en el input -->
+            <output id="resultado-fijo" name="id_sesion">A48-TKY-901</output>
+        </fieldset>
+
+        <!-- Fieldset Disabled -->
+        <fieldset disabled>
+            <legend>Sección Deshabilitada</legend>
+            <label for="antiguo-id">Antiguo ID:</label>
+            <input type="text" id="antiguo-id" value="No editable" name="antiguo_id">
+        </fieldset>
+        
+        <!-- Botones -->
+        <fieldset class="button-group">
+            <legend>Acciones</legend>
+            <!-- autofocus: el navegador pondrá el foco aquí. -->
+            <button type="submit" class="btn-modern" autofocus>
+                Enviar (Submit)
+            </button>
+            
+            <input type="reset" value="Limpiar (Reset)" class="btn-modern" style="background-color: #ffc107; color: #333;">
+            
+            <button type="button" class="btn-modern" style="background-color: #6c757d;">
+                Acción JS (Button)
+            </button>
+            
+            <button type="submit" class="btn-modern" disabled style="background-color: #ccc;">
+                Enviar (Disabled)
+            </button>
+        </fieldset>
+    </form>
+</body>
+</html>

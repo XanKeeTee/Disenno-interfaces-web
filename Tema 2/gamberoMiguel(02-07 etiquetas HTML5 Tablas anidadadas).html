@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios de Tabla</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: left;
+            vertical-align: top; 
+        }
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Soluciones a Ejercicios de Tablas</h1>
+    <h2>Ejercicio 1a (colspan)</h2>
+    <table>
+      <tr>
+        <td colspan="2">Esta celda tiene un colspan="2"</td>
+      </tr>
+      <tr>
+        <td>Celda normal</td>
+        <td>Otra celda</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 1b (rowspan)</h2>
+    <table>
+      <tr>
+        <td rowspan="2">Esta celda tiene rowspan="2", por eso tiene fusionada la celda de abajo.</td>
+        <td>Celda Normal</td>
+      </tr>
+      <tr>
+        <td>Otra celda normal</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 1c (colspan, rowspan y color)</h2>
+    <!--  -->
+    <table style="background-color: #cceeff; width: 300px;">
+      <tr>
+        <td colspan="2">Linea1Linea2</td>
+      </tr>
+      <tr>
+        <td>Linea3</td>
+        <td>Linea4</td>
+      </tr>
+      <tr>
+        <td>Linea5</td>
+        <td rowspan="2">Linea6Linea8</td>
+      </tr>
+      <tr>
+        <td>Linea7</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 1d (Celdas de colores)</h2>
+    <table style="width: 300px;">
+      <tr>
+        <td style="background-color: #e0ffe0;">Linea1</td>
+        <td style="background-color: #ffffe0;">Linea2</td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="background-color: #d0f0d0;">Linea3</td>
+        <td style="background-color: #f0f0c0;">Linea4</td>
+      </tr>
+      <tr>
+        <td style="background-color: #f0f0c0;">Linea6</td>
+      </tr>
+      <tr>
+        <td style="background-color: #e0e0ff;">Linea5</td>
+        <td rowspan="2" style="background-color: #f8f8f8;">Linea8</td>
+      </tr>
+      <tr>
+        <td style="background-color: #e0e0ff;">Linea7</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 1e (Tabla 1)</h2>
+    <table style="width: 200px; text-align: center;">
+      <tr>
+        <td rowspan="2">A</td>
+        <td>B</td>
+      </tr>
+      <tr>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td rowspan="2">D</td>
+        <td>E</td>
+      </tr>
+      <tr>
+        <td>F</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 1e (Tabla 2)</h2>
+    <table style="width: 300px; text-align: center;">
+      <tr>
+        <td>A</td>
+        <td colspan="2">B</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>E</td>
+        <td colspan="2" rowspan="2">F</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>H</td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td>J</td>
+        <td>K</td>
+        <td>L</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 2 (Layout de Página)</h2>
+    <table style="width: 80%;">
+      <!-- Cabecera -->
+      <tr style="background-color: #cceeff;">
+        <td colspan="2" style="height: 100px;">Cabecera</td>
+      </tr>
+      
+      <tr style="height: 300px;">
+        <td style="width: 150px; background-color: #f0f0f0;">
+          Enlaces<br>
+          Enlace1<br>
+          Enlace2<br>
+          Enlace3
+        </td>
+        <td style="background-color: #ffffff;">
+          Contenido...
+        </td>
+      </tr>
+
+      <tr style="background-color: #ffcc99;">
+        <td colspan="2" style="height: 80px;">Pies</td>
+      </tr>
+    </table>
+
+    <h2>Ejercicio 3 (Tablas Anidadas)</h2>
+    <table style="width: 70%;">
+      <caption>Climas de América del Sur</caption>
+      <tr>
+        <td>
+          <table style="width: 100%; background-color: #e0ffe0; border: 2px solid green;">
+            <tr><td>Parte de arriba de América del Sur.</td></tr>
+            <tr><td>Paises como:</td></tr>
+            <tr><td>Bosque tropical, clima de sabana, clima marítimo...</td></tr>
+          </table>
+        </td>
+        <td>
+          <table style="width: 100%; background-color: #e0e0ff; border: 2px solid blue;">
+            <tr><td>Parte de abajo de América del Sur.</td></tr>
+            <tr><td>Países como:</td></tr>
+            <tr><td>Climas marítimos con veranos secos, climas frios...</td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+</body>
+</html>

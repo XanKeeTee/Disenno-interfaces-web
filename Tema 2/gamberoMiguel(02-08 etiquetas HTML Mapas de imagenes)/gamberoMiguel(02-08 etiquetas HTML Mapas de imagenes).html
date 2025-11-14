@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    h2 {
+      text-decoration: underline;
+    }
+    img {
+        width: 100%; 
+        max-width: 900px;
+        height: auto;
+    }
+  </style>
+  <body>
+    <h2>Ejercicio 1</h2>
+    <img src="imagemap_cuadrado.jpg" usemap="#map" />
+    <map name="map">
+        <area shape="rect" coords="367, 315, 684, 436" href="#hardware" alt="Botón Hardware" >
+        <area shape="rect" coords="11, 315, 330, 437" href="#supermini" alt="Botón Super Mini">
+        <area shape="rect" coords="365, 163, 687, 284" href="#dirty" alt="Botón I'm Very Dirty">
+        <area shape="rect" coords="11, 163, 332, 286" href="#digg" alt="Botón Digg This">
+        <area shape="rect" coords="384, 44, 669, 103" href="#text" alt="Botón Text Only">
+        <area shape="rect" coords="29, 44, 317, 103" href="#comments" alt="Botón Comments">
+    </map>
+    
+    <h2>Ejercicio 2</h2>
+    <img src="Screenshot_1.png" usemap="#map2" />
+    <map name="map2">
+        <area shape="circle" coords="297, 76, 16" href="rojo" alt="Botón Comments" />
+        <area shape="circle" coords="235, 78, 16" href="azul" alt="Botón Comments" />
+        <area shape="circle" coords="171, 79, 17" href="verde" alt="Botón Comments" />
+        <area shape="circle" coords="108, 77, 16" href="amarillo" alt="Botón Comments" />
+    </map>
+
+    <h2>Ejercicio 3</h2>
+    <img src="Screenshot_2.png" id="map-image" style="width: 493px; max-width: 100%; height: auto;" alt="" usemap="#map" />
+    <map name="map">
+        <area shape="poly" coords="149, 119, 142, 111, 144, 106, 135, 95, 141, 90, 154, 88, 160, 83, 171, 76, 185, 68, 188, 60, 181, 55, 181, 50, 187, 49, 194, 54, 197, 49, 199, 44, 205, 44, 213, 56, 230, 44, 226, 36, 229, 31, 227, 30, 237, 27, 252, 30, 255, 36, 254, 41, 271, 41, 279, 37, 282, 29, 292, 23, 303, 23, 303, 38, 311, 41, 314, 48, 324, 70, 327, 92, 321, 100, 311, 106, 306, 104, 303, 121, 284, 124, 264, 127, 242, 123, 225, 117, 212, 118, 214, 129, 210, 138, 202, 131, 194, 137, 182, 132, 171, 130, 166, 123, 160, 130, 154, 125"  href="Antequera"/>
+        <area shape="poly" coords="304, 121, 306, 105, 314, 105, 325, 96, 330, 94, 338, 102, 350, 112, 361, 112, 370, 120, 384, 129, 401, 131, 418, 141, 433, 153, 436, 169, 428, 169, 401, 170, 396, 173, 380, 169, 365, 170, 361, 173, 336, 173, 322, 179, 314, 175, 313, 157, 322, 153, 330, 146, 322, 137, 314, 138" href="Ronda"/>
+        <area shape="poly" coords="247, 126, 267, 126, 301, 123, 315, 139, 320, 138, 320, 143, 325, 143, 328, 147, 323, 151, 320, 156, 314, 158, 314, 165, 315, 174, 315, 175, 308, 175, 297, 175, 290, 178, 281, 193, 274, 193, 267, 197, 259, 201, 251, 203, 245, 198, 245, 196, 245, 183, 254, 180, 260, 174, 257, 159, 249, 152, 247, 145, 248, 136" href="Costa occidental"/>
+        <area shape="poly" coords="190, 138, 202, 131, 210, 136, 215, 129, 214, 120, 224, 118, 242, 124, 247, 130, 249, 138, 247, 146, 251, 154, 256, 159, 259, 173, 254, 180, 246, 184, 244, 194, 241, 200, 237, 205, 227, 206, 209, 209, 198, 206, 193, 204, 187, 199, 181, 197, 161, 193, 159, 188, 164, 176, 167, 165, 175, 159, 186, 158, 193, 147, 188, 144, 193, 137" href="Malaga"/>
+        <area shape="poly" coords="83, 248, 89, 262, 92, 274, 96, 278, 103, 274, 110, 281, 110, 270, 116, 262, 124, 256, 134, 252, 144, 246, 155, 244, 161, 242, 168, 235, 181, 231, 198, 231, 215, 235, 224, 237, 237, 234, 243, 232, 249, 216, 264, 212, 270, 207, 278, 195, 273, 193, 266, 198, 259, 201, 252, 203, 247, 200, 242, 204, 235, 203, 228, 207, 221, 208, 214, 208, 206, 207, 194, 205, 189, 204, 186, 198, 180, 195, 170, 194, 162, 191, 152, 198, 148, 204, 146, 211, 141, 217, 133, 223, 127, 222, 117, 234, 114, 234, 108, 225, 101, 220, 104, 228, 98, 235" href="Valle del guadalorce"/>
+        <area shape="poly" coords="29, 219, 32, 228, 40, 227, 49, 230, 51, 224, 56, 219, 67, 220, 72, 224, 79, 241, 83, 247, 92, 241, 98, 236, 103, 228, 102, 220, 110, 225, 114, 234, 119, 234, 125, 226, 128, 221, 134, 223, 137, 220, 143, 215, 146, 207, 150, 202, 157, 194, 159, 188, 158, 185, 162, 178, 165, 171, 170, 167, 172, 162, 182, 160, 188, 159, 192, 147, 187, 141, 185, 134, 178, 130, 172, 130, 165, 125, 163, 129, 155, 126, 147, 120, 139, 135, 130, 141, 122, 142, 117, 140, 113, 130, 105, 127, 99, 131, 91, 143, 98, 157, 94, 169, 91, 179, 85, 189, 75, 195, 68, 197, 64, 203, 56, 210, 54, 218, 42, 218, 30, 215" href="La anraxia"/>
+    </map>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="imageMapResizer.min.js"></script>
+    <script>$(document).ready(function(e){$("map").imageMapResize();});</script>
+  </body>
+</html>

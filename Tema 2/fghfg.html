@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 400px; margin-left:auto; margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red;border-radius:6px; padding: 15px;">
+        <form>
+            <h2>Formulario 1</h2> 
+            
+            <fieldset>
+                <legend>Datos personales</legend>
+                
+                <label for="nombre">Nombre:</label> 
+                <input type="text" id="nombre" name="nombre">
+                <br><br>
+                
+                <label for="apellido">Apellido:</label> 
+                <input type="text" id="apellido" name="apellido">
+                <br><br>
+                
+                <label for="edad">Edad:</label> [cite: 40, 196]
+                <input type="number" id="edad" name="edad" style="width: 60px;">
+            </fieldset>
+            
+            <br>
+            
+            <label for="satisfaccion">Seleccione tu satisfacción Con el concierto</label>
+            <br>
+            <input type="range" id="satisfaccion" name="satisfaccion" min="0" max="10" style="width: 90%;">
+            
+            <br><br>
+            
+            <input type="submit" value="Gracias por tus Opiniones">
+            <br><br>
+        </form>
+    </div>
+
+    <div style="width: 400px; margin-left:auto; margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red;border-radius:6px; padding: 15px;">
+    
+        <form>
+            <h2>Formulario 2</h2>
+            
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" value="ee">
+                <br><br>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido">
+                <br><br>
+                
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" style="width: 60px;">
+            </fieldset>
+            
+            <br>
+            
+            <fieldset>
+                <legend>Concierto</legend>
+                
+                <label for="concierto">Concierto al que asististe:</label>
+                <input type="text" id="concierto" name="concierto" list="listaConciertos" placeholder="Pulsa para ver conciertos">
+                
+                <datalist id="listaConciertos">
+                    <option value="Malu">
+                    <option value="Omar Montes">
+                    <option value="Los Mojinos">
+                    <option value="Medina Azahara">
+                    <option value="Julio Iglesias">
+                </datalist>
+                <br><br>
+                
+                <label for="impresiones">Que te parecio el concierto:</label>
+                <br>
+                <textarea id="impresiones" name="impresiones" rows="5" cols="45" placeholder="Escribe tus impresiones"></textarea>
+                <br><br>
+                
+                <label for="valoracion">Valoración:</label>
+                <select id="valoracion" name="valoracion">
+                    <option value="">Pulsa para ver opciones</option>
+                    <option value="1">1 - Malo</option>
+                    <option value="2">2 - Regular</option>
+                    <option value="3">3 - Bueno</option>
+                </select>
+            </fieldset>
+            
+            <br>
+            
+            <input type="submit" value="Gracias por tus Opiniones">
+            <br><br>
+        </form>
+    </div>
+
+    <div style="width: 400px; margin-left:auto; margin-right:auto;background-color: beige;border-color:brown;border: 1px solid red;border-radius:6px; padding: 15px;">
+    
+        <form action="#">
+            <h2>Formulario 3</h2> 
+            <h3>Genera tu personaje para el juego</h3> 
+        
+            <label for="nombre">Nombre:</label> 
+            <input type="text" id="nombre" name="nombre">
+            <br><br>
+            
+            <label for="faccion">Valoración:</label>
+            <input type="text" id="faccion" name="faccion" list="listaFacciones" placeholder="Pulsa para facciones">
+            
+            <datalist id="listaFacciones">
+                <option value="Guerrero"></option> 
+                <option value="Mago"></option> 
+                <option value="Ladrón"></option> 
+                <option value="Paladin"></option>
+            </datalist>
+            <br><br>
+            
+            <label for="edad">Escoge la edad:</label> s  
+            <input type="number" id="edad" name="edad" style="width: 60px;">
+            <br><br>
+            
+            <button type="button" onclick="cambio()">Genera tu personaje</button> 
+            <br><br>
+
+            <fieldset>
+                <legend>Datos del personaje</legend> 
+                
+                <label for="Fuerza">Fuerza:</label> 
+                <progress id="Fuerza" max="200" value="0"></progress> 
+                <br><br>
+                
+                <label for="Velocidad">Velocidad:</label>
+                <progress id="Velocidad" max="200" value="0"></progress>
+                <br><br>
+                
+                <label for="Persuasion">Persuasión:</label>
+                <progress id="Persuasion" max="200" value="0"></progress>
+                <br><br>
+                
+                <label for="Espionaje">Espionaje:</label> 
+                <progress id="Espionaje" max="200" value="0"></progress>
+            </fieldset>
+            <br>
+        </form>
+    </div>
+    <script>
+        function cambio() {
+            Velocidad.value = Math.random() * 200; 
+            Fuerza.value = Math.random() * 200; 
+            Persuasion.value = Math.random() * 200; 
+            Espionaje.value = Math.random() * 200; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Formularios HTML</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            max-width: 900px; 
+            margin: 20px auto; 
+            padding: 15px; 
+            line-height: 1.6;
+        }
+        h1 { text-align: center; color: #333; }
+        h2 { 
+            background-color: #f4f4f4; 
+            padding: 10px; 
+            border-radius: 5px; 
+            margin-top: 30px; 
+            border-bottom: 2px solid #ddd;
+        }
+        form, fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        legend { font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f9f9f9; }
+        dt { font-weight: bold; font-family: monospace; background-color: #eee; padding: 2px 5px; margin-top: 5px; }
+        dd { margin-left: 20px; }
+        div { margin-bottom: 10px; }
+        label { margin-right: 5px; }
+        input, button { padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Formularios (Resumen de Ejercicios)</h1>
+
+    <!-- 1. Funcionamiento de Formularios -->
+    <h2>1. <h1>Formularios</h1></h2>
+    <p>Un formulario HTML es el mecanismo que usa una página web para recoger datos de un usuario y enviarlos a un servidor. Funciona como un contenedor (la etiqueta <code>&lt;form&gt;</code>) que agrupa diferentes controles (como <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, etc.). Cuando el usuario pulsa el botón de enviar, el navegador empaqueta los datos de los controles (usando sus atributos <code>name</code>) y los envía al destino (atributo <code>action</code>) usando el método especificado (atributo <code>method</code>).</p>
+
+    <!-- 2. GET/POST -->
+    <h2>2. <h1>GET/POST</h1></h2>
+    <p>Son los dos métodos principales para enviar datos de un formulario:</p>
+    <ul>
+        <li><strong>GET:</strong> Envía los datos añadiéndolos al final de la URL (ej: <code>...buscar.php?q=libros</code>).
+            <ul>
+                <li><strong>Ventajas:</strong> La URL se puede guardar en favoritos o compartir. Es bueno para búsquedas o filtros.</li>
+                <li><strong>Desventajas:</strong> Es inseguro para datos sensibles (contraseñas) y tiene un límite de tamaño.</li>
+            </ul>
+        </li>
+        <li><strong>POST:</strong> Envía los datos de forma oculta en el "cuerpo" de la petición HTTP. La URL no cambia.
+            <ul>
+                <li><strong>Ventajas:</strong> Es seguro para datos sensibles y no tiene límite de tamaño (ideal para subir archivos).</li>
+                <li><strong>Desventajas:</strong> No se puede guardar en favoritos. Si recargas, el navegador pregunta si quieres "reenviar" los datos.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- 3. Atributos <form> -->
+    <h2>3. <h1>Atributos</h1> (de &lt;form&gt;)</h2>
+    <dl>
+        <dt>accept-charset</dt>
+        <dd>Define la codificación de caracteres (ej: "UTF-8").</dd>
+        <dt>autocomplete</dt>
+        <dd>Activa ("on") o desactiva ("off") el autocompletado del navegador para el formulario.</dd>
+        <dt>enctype</dt>
+        <dd>Cómo se codifican los datos. Se usa <code>multipart/form-data</code> si se van a subir archivos.</dd>
+        <dt>novalidate</dt>
+        <dd>Si está presente, el navegador no validará los campos (<code>required</code>, <code>pattern</code>, etc.) antes de enviar.</dd>
+        <dt>target</dt>
+        <dd>Dónde mostrar la respuesta (ej: <code>_self</code> en la misma ventana, <code>_blank</code> en una pestaña nueva).</dd>
+    </dl>
+
+    <!-- 4. Atributos <input> -->
+    <h2>4. <h1>Atributos text</h1> (tabla)</h2>
+    <table>
+        <caption>Atributos principales de <code>&lt;input&gt;</code></caption>
+        <thead>
+            <tr><th>Atributo</th><th>Descripción (3-4 palabras)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td><code>type</code></td><td>Define el tipo de control</td></tr>
+            <tr><td><code>form</code></td><td>Asocia input con formulario (por <code>id</code>)</td></tr>
+            <tr><td><code>name</code></td><td>Nombre para enviar al servidor</td></tr>
+            <tr><td><code>formnovalidate</code></td><td>Botón anula validación formulario</td></tr>
+            <tr><td><code>size</code></td><td>Ancho visible (en caracteres)</td></tr>
+            <tr><td><code>maxlength</code></td><td>Límite máximo de caracteres</td></tr>
+            <tr><td><code>value</code></td><td>Valor inicial o enviado</td></tr>
+            <tr><td><code>id</code></td><td>Identificador único (para <code>&lt;label&gt;</code>)</td></tr>
+            <tr><td><code>disabled</code></td><td>Deshabilita; no se envía</td></tr>
+            <tr><td><code>readonly</code></td><td>No editable; sí se envía</td></tr>
+            <tr><td><code>autocomplete</code></td><td>Activa/desactiva autocompletar campo</td></tr>
+            <tr><td><code>required</code></td><td>Hace el campo obligatorio</td></tr>
+            <tr><td><code>autofocus</code></td><td>Pone el foco al cargar</td></tr>
+            <tr><td><code>pattern</code></td><td>Valida con expresión regular</td></tr>
+            <tr><td><code>placeholder</code></td><td>Texto de ayuda (desaparece al escribir)</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 5. Formulario Básico GET -->
+    <h2>5. <h1>Formulario</h1> (Básico GET)</h2>
+    <form action="#" method="GET">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ]+" required autofocus>
+        </div>
+        <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" required>
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" name="edad" pattern="[0-9]+" required>
+        </div>
+        <div>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" size="5">
+        </div>
+        
+        <input type="hidden" name="control_oculto" value="edad">
+        
+        <div>
+            <p><strong>Botones:</strong></p>
+            <input type="submit" value="Enviar (Submit)">
+            <input type="reset" value="Limpiar (Reset)">
+            <input type="button" value="Botón (Button)" onclick="alert('Hola');">
+            <button type="submit">Enviar (&lt;button&gt;)</button>
+        </div>
+    </form>
+
+    <!-- 6. Atributos <button> -->
+    <h2>6. <h1>Atributos button</h1></h2>
+    <p>Estos atributos (para <code>&lt;button&gt;</code> o <code>&lt;input type="submit"&gt;</code>) sobrescriben los del <code>&lt;form&gt;</code>:</p>
+    <ol>
+        <li><strong>formaction:</strong> Sobrescribe el <code>action</code> del formulario.</li>
+        <li><strong>formmethod:</strong> Sobrescribe el <code>method</code> (ej: GET o POST).</li>
+        <li><strong>formenctype:</strong> Sobrescribe el <code>enctype</code> (ej: para subir archivos).</li>
+        <li><strong>formnovalidate:</strong> Hace que ese botón envíe el formulario sin validar.</li>
+        <li><strong>formtarget:</strong> Sobrescribe el <code>target</code> (ej: <code>_blank</code>).</li>
+    </ol>
+
+    <!-- 7. Formulario Variado -->
+    <h2>7. Formulario Variado (GET)</h2>
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre7">Nombre:</label>
+            <input type="text" id="nombre7" name="nombre">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Botones de radio (solo una opción)</legend>
+            <input type="radio" id="op1" name="opcion_unica" value="op1"> <label for="op1">Opción 1</label><br>
+            <input type="radio" id="op2" name="opcion_unica" value="op2"> <label for="op2">Opción 2</label><br>
+            <input type="radio" id="op3" name="opcion_unica" value="op3"> <label for="op3">Opción 3</label><br>
+            <input type="radio" id="op4" name="opcion_unica" value="op4"> <label for="op4">Opción 4</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Casillas de verificación (varias opciones)</legend>
+            <input type="checkbox" id="extra1" name="extra1" value="si"> <label for="extra1">Extra 1</label><br>
+            <input type="checkbox" id="extra2" name="extra2" value="si"> <label for="extra2">Extra 2</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Selección de archivo</legend> 
+            <label for="archivo">Adjuntar:</label>
+            <input type="file" id="archivo" name="archivo">
+        </fieldset>
+
+        <input type="submit" value="Enviar Formulario">
+    </form>
+
+    <!-- 8. Formulario en Tabla -->
+    <h2>8. Formulario en Tabla Estilizada</h2>
+    <form action="#" method="GET">
+        <table style="width: 80%; margin-left: auto; margin-right: auto; border: red 1px solid;">
+            <caption>Formulario de Contacto</caption>
+            <tr>
+                <td style="border: gray 1px solid; padding: 8px;"><label for="nombre8">Nombre:</label></td>
+                <td style="border: gray 1px solid; padding: 8px;"><input type="text" id="nombre8" name="nombre" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td style="border: gray 1px solid; padding: 8px;"><label for="email8">Email:</label></td>
+                <td style="border: gray 1px solid; padding: 8px;"><input type="email" id="email8" name="email" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: gray 1px solid; padding: 8px; text-align: center;">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr> 
+        </table>
+    </form>
+
+    <!-- 9. Formulario de Reserva -->
+    <h2>9. Formulario de Reserva (GET)</h2>
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div>
+                <label for="datos_persona">Nombre:</label>
+                <input type="text" id="datos_persona" name="datos_persona" required>
+            </div>
+            <div>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Detalles de la Reserva</legend>
+            <div>
+                <label for="num_personas">Nº Personas:</label>
+                <input type="number" id="num_personas" name="num_personas" min="1" max="20" step="1">
+            </div>
+            <div>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha">
+            </div>
+            <div>
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora">
+            </div>
+        </fieldset>
+        <input type="submit" value="Realizar Reserva">
+    </form>
+
+    <!-- 10. Formulario Ajuste de Color -->
+    <h2>10. Formulario Ajuste de Color (GET)</h2>
+    <form action="#" method="GET">
+        <div>
+            <label for="tematica_color">Temática:</label>
+            <input type="text" id="tematica_color" name="tematica" value="Ajuste de Perfil">
+        </div>
+        <div>
+            <label for="color_elegido">Color:</label>
+            <input type="color" id="color_elegido" name="color_elegido" value="#563d7c">
+        </div>
+        <div>
+            <label for="contraste">Contraste:</label>
+            <input type="range" id="contraste" name="contraste" min="0" max="100" value="50">
+        </div>
+        <div>
+            <label for="brillo">Brillo:</label>
+            <input type="range" id="brillo" name="brillo" min="0" max="100" value="75">
+        </div>
+        <input type="submit" value="Guardar Ajustes">
+    </form>
+
+    <!-- 11. Formulario Submisión Web -->
+    <h2>11. Formulario Submisión Web (POST)</h2>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <table style="width: 80%; margin-left: auto; margin-right: auto; border: red 1px solid;">
+            <caption>Alta en Buscador</caption>
+            <tr>
+                <td style="border: green 1px solid; padding: 8px;"><label for="tematica_web">Temática Web:</label></td>
+                <td style="border: green 1px solid; padding: 8px;"><input type="text" id="tematica_web" name="tematica" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td style="border: green 1px solid; padding: 8px;"><label for="web_url">URL:</label></td>
+                <td style="border: green 1px solid; padding: 8px;"><input type="url" id="web_url" name="web_url" placeholder="http://www.ejemplo.com" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td style="border: green 1px solid; padding: 8px;"><label for="busqueda">Términos:</label></td>
+                <td style="border: green 1px solid; padding: 8px;"><input type="search" id="busqueda" name="busqueda" style="width: 95%;"></td>
+            </tr>
+            <tr>
+                <td style="border: green 1px solid; padding: 8px;"><label for="sitemap">Sitemap:</label></td>
+                <td style="border: green 1px solid; padding: 8px;"><input type="file" id="sitemap" name="sitemap"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="border: green 1px solid; padding: 8px; text-align: center;">
+                    <input type="submit" value="Enviar a Buscador">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
