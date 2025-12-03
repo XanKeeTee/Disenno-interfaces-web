@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 03-06 Iconos</title>
+  </head>
+  <body>
+
+    <h2>Ejercicio 1</h2>
+    <div id="ejercicio1"></div>
+    <script>
+      var explicacion1 = "Para establecer el icono predeterminado en el servidor, debes nombrar tu archivo como <b>favicon.ico</b> y subirlo al directorio raíz de tu sitio web. No es necesario código HTML si el navegador lo busca automáticamente en la raíz.";
+      
+      document.getElementById("ejercicio1").innerHTML = explicacion1;
+    </script>
+
+    <h2>Ejercicio 2</h2>
+    <div id="ejercicio2"></div>
+    <script>
+      var codigoHtmlIcono = '&lt;link rel="shortcut icon" href="myicono.ico" type="image/x-icon"&gt;';
+      var codigoHtmlPng = '&lt;link rel="icon" href="myicono.png" type="image/png"&gt;';
+      
+      document.getElementById("ejercicio2").innerHTML = 
+        "Código necesario en el &lt;head&gt;:<br><br>" + 
+        codigoHtmlIcono + "<br>" + 
+        codigoHtmlPng;
+    </script>
+
+    <h2>Ejercicio 3</h2>
+    <div id="ejercicio3"></div>
+    <script>
+      var codigoGif = '&lt;link rel="icon" href="animado.gif" type="image/gif"&gt;';
+      
+      document.getElementById("ejercicio3").innerHTML = 
+        "Código para GIF animado (visible en Firefox):<br><br>" + 
+        codigoGif;
+    </script>
+
+  </body>
+</html>
